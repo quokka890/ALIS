@@ -1,0 +1,13 @@
+setup.py
+ALIS.egg-info/PKG-INFO
+ALIS.egg-info/SOURCES.txt
+ALIS.egg-info/dependency_links.txt
+ALIS.egg-info/requires.txt
+ALIS.egg-info/top_level.txt
+lib/__init__.py
+lib/config_manager.py
+lib/installer.py
+lib/maid.py
+lib/syscommands.py
+lib/utils/checks.py
+lib/utils/disk_utils.py
