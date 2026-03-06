@@ -5,8 +5,9 @@ from lib.utils.checks import prelim_checks
 from lib.utils.disk_utils import get_diskpath
 from lib.syscommands import run_command
 
-prelim_checks()
-config = json.load('config.json')
+with open('config.json') as config:
+    config = json.load(config)
+    print(config)
 diskpath = get_diskpath(config["disk"])
 
 def prep_disk():

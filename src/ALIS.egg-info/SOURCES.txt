@@ -1,0 +1,13 @@
+setup.py
+src/__init__.py
+src/config_manager.py
+src/installer.py
+src/run.py
+src/syscommands.py
+src/ALIS.egg-info/PKG-INFO
+src/ALIS.egg-info/SOURCES.txt
+src/ALIS.egg-info/dependency_links.txt
+src/ALIS.egg-info/requires.txt
+src/ALIS.egg-info/top_level.txt
+src/utils/checks.py
+src/utils/disk_utils.py
