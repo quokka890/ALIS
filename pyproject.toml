@@ -1,9 +1,12 @@
 [project]
 name="alis"
 version = "0.0.1"
+dependencies=[
+    "inquirer"
+]
 
 [build-system]
-requires = ["setuptools", "inquirer"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages]
