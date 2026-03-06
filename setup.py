@@ -1,3 +1,9 @@
 from setuptools import setup
 
-setup(name='archctl')
+setup(
+    name='ALIS',
+    install_requires=[
+        'inquirer',
+        
+    ]
+)
