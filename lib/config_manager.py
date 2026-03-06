@@ -39,4 +39,3 @@ def genereate_config():
     return 0
     with open("config.json", "w") as f: 
         f.write(json_str)
-genereate_config()
