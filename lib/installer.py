@@ -12,7 +12,7 @@ with open("config.json") as config:
     print(config)
 diskpath = get_diskpath(config["disk"])
 ### PREPARE DISK ###
-print(f'Starting preparation for {diskpart}')
+print(f'Starting preparation for {diskpath}')
 run_command(f'dd if=/dev/urandom of={diskpath} BS=64M status=progress')
 print("Disk preparation successful. Formatting...")
 run_command(f'parted {diskpath} --script mklabel gpt mkpart primary 1MiB 4097MiB mkpart primary 4097MiB 36865MiB')
