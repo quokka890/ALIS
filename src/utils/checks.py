@@ -15,5 +15,4 @@ def prelim_checks():
     # UEFI bitness
     bitness = run_command("cat /sys/firmware/efi/fw_platform_size")
     if bitness != "64":
-        print("Prelim checks failed: not running in 64-bit UEFI mode")
-        exit(1)
+        print("WARNING: not running in 64-bit UEFI mode")
