@@ -6,4 +6,4 @@ def get_disks():
     return disk_list
 
 def get_diskpath(disk):
-    return ("/dev/", disk)
+    return (f'/dev/{disk}')
