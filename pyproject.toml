@@ -3,7 +3,7 @@ name="alis"
 version = "0.0.1"
 
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "inquirer"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages]
