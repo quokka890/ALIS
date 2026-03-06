@@ -1,7 +1,0 @@
-__init__
-config_manager
-installer
-pacman
-run
-syscommands
-utils
