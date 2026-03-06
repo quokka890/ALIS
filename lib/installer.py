@@ -12,7 +12,7 @@ with open("config.json") as config:
     print(config)
 diskpath = get_diskpath(config["disk"])
 ### PREPARE DISK ###
-if input("Starting disk preparation. THIS WILL ERASE ALL DATA ON ", config["disk"], ". Are you sure you want to proceed? y/N") != "y":
+if input("Starting disk preparation. THIS WILL ERASE ALL DATA ON " + config["disk"] + ". Are you sure you want to proceed? y/N") != "y":
     exit(0)
 run_command("dd if=/dev/urandom of=", diskpath, " BS=64M status=progress")
 print("Disk preparation successful. Formatting...")
