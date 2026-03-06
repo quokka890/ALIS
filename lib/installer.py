@@ -11,11 +11,10 @@ with open('config.json') as config:
     config = json.load(config)
     print(config)
 diskpath = get_diskpath(config["disk"])
-
-def prep_disk():
-    if input("Starting disk preparation. THIS WILL ERASE ALL DATA ON ", config["disk"], ". Are you sure you want to proceed? y/N") != "y":
-        exit(0)
-    run_command("dd if=/dev/urandom of=", diskpath, " BS=64M status=progress")
-    print("Disk preparation successful. Formatting...")
-    run_command("parted ", diskpath, " --script mklabel gpt mkpart primary 1MiB 4097MiB mkpart primary 4097MiB 36865MiB")
-    run_command("parted ", diskpath, " --script print ")
+### PREPARE DISK ###
+if input("Starting disk preparation. THIS WILL ERASE ALL DATA ON ", config["disk"], ". Are you sure you want to proceed? y/N") != "y":
+    exit(0)
+run_command("dd if=/dev/urandom of=", diskpath, " BS=64M status=progress")
+print("Disk preparation successful. Formatting...")
+run_command("parted ", diskpath, " --script mklabel gpt mkpart primary 1MiB 4097MiB mkpart primary 4097MiB 36865MiB")
+run_command("parted ", diskpath, " --script print ")
