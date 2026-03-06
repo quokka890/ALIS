@@ -7,7 +7,7 @@ from lib.syscommands import run_command
 
 genereate_config()
 
-with open('config.json') as config:
+with open("config.json") as config:
     config = json.load(config)
     print(config)
 diskpath = get_diskpath(config["disk"])

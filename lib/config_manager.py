@@ -32,10 +32,11 @@ questions = [
 def genereate_config():
     config = inquirer.prompt(questions)
     json_str = json.dumps(config).strip()
+    #check if file exists. if it does then overwrite, else create 
     if os.path.exists("config.json"):
-        print("Overwriting existing config file with new one")
         with open("config.json", "w") as f:
             f.write(json_str)
-    return 0
-    with open("config.json", "w") as f: 
-        f.write(json_str)
+        return 0
+    else:
+        with open("config.json", "w") as f: 
+            f.write(json_str)

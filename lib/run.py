@@ -1,6 +1,3 @@
-from lib.maid import cleanup
+import lib.maid
 import atexit
 import lib.installer
-
-
-atexit.register(cleanup)
