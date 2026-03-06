@@ -31,7 +31,7 @@ questions = [
 
 def genereate_config():
     config = inquirer.prompt(questions)
-    format(config["disk"]).strip("1234567890,GT ")
+    config["disk"]=format(config["disk"]).strip("1234567890,GTMIB ")
     json_str = json.dumps(config).strip()
     #check if file exists. if it does then overwrite, else create 
     if os.path.exists("config.json"):
