@@ -30,7 +30,8 @@ questions = [
 ]
 
 def genereate_config():
-    config = inquirer.prompt(questions)
+    raw_config = inquirer.prompt(questions)
+    config = format(config).strip("1234567890,GT ")
     json_str = json.dumps(config).strip()
     #check if file exists. if it does then overwrite, else create 
     if os.path.exists("config.json"):
