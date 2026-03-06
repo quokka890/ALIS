@@ -13,9 +13,9 @@ with open("config.json") as config:
 diskpath = get_diskpath(config["disk"])
 ### PREPARE DISK ###
 print("starting disk partitioning")
-run_command('dd if=/dev/urandom of="'+diskpath+'" BS=64M status=progress')
+run_command(f'dd if=/dev/urandom of={diskpath} BS=64M status=progress')
 print("Disk preparation successful. Formatting...")
-run_command('parted "'+diskpath+'" --script mklabel gpt mkpart primary 1MiB 4097MiB mkpart primary 4097MiB 36865MiB')
-run_command('parted "'+diskpath+'" --script print ')
+run_command(f'parted {diskpath} --script mklabel gpt mkpart primary 1MiB 4097MiB mkpart primary 4097MiB 36865MiB')
+run_command(f'parted {diskpath} --script print ')
 
 print('"'+diskpath+'" earm')
