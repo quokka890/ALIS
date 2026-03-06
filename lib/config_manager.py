@@ -1,8 +1,9 @@
 import configparser
 import inquirer 
 import json
+import os
 from types import SimpleNamespace
-from utils.disk_utils import get_disks
+from lib.utils.disk_utils import get_disks
 
 disk_list = get_disks()
 
@@ -27,5 +28,13 @@ questions = [
         default=True
     ),
 ]
-config = inquirer.prompt(questions)
-json.dumps(config)
+
+def genereate_config():
+    if os.path.exists("config.json"):
+        print("it exists")
+        return 0
+    config = inquirer.prompt(questions)
+    json_str = json.dumps(config).strip()
+    with open("config.json", "w") as f: 
+        f.write(json_str)
+genereate_config()

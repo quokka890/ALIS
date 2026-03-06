@@ -1,9 +1,11 @@
 import json
-import lib.config_manager
+from lib.config_manager import genereate_config
 import lib.utils.checks
 from lib.utils.checks import prelim_checks  
 from lib.utils.disk_utils import get_diskpath
 from lib.syscommands import run_command
+
+genereate_config()
 
 with open('config.json') as config:
     config = json.load(config)
