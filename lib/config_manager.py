@@ -34,10 +34,5 @@ def genereate_config():
     config["disk"]=format(config["disk"]).strip("1234567890,GTMIB ")
     json_str = json.dumps(config).strip()
     #check if file exists. if it does then overwrite, else create 
-    if os.path.exists("config.json"):
-        with open("config.json", "w") as f:
-            f.write(json_str)
-        return 0
-    else:
-        with open("config.json", "w") as f: 
-            f.write(json_str)
+    with open("config.json", "w") as f:
+        f.write(json_str)

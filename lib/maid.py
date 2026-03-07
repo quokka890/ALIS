@@ -2,12 +2,16 @@ import os
 import sys
 import atexit
 
-def cleanup():
-    if exit(1): 
+if os.path.exists("logs.txt") == True:
+    os.remove("logs.txt")
+
+def cleanup(Called_By_AtExit=True, ExitCode=0):
+    if exit == 0: 
         return
-    else:
-        print("cleaning up")
+    elif os.path.exists("config.json"):
         os.remove("config.json")
         s = os.path.exists("config.json")
+    if Called_By_AtExit == False:
+        exit(ExitCode)
 
 atexit.register(cleanup)
